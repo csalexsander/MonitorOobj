@@ -1,0 +1,149 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Painel</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/css/tether-theme-arrows-dark.min.css" rel="stylesheet" />
+    <link href="~/css/tether-theme-arrows.min.css" rel="stylesheet" />
+    <link href="~/css/tether-theme-basic.min.css" rel="stylesheet" />
+    <link href="~/css/tether.min.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class=panel-heading>
+                <h3 class=panel-title>Totais de Mensagens</h3>
+            </div>
+            <div class=panel-body>
+                <label>CNPJ com mais de 2000 mensagens: </label> @ViewBag.cnpjA <br />
+                <label>CNPJ com quantidade entre 1000 a 2000 Mensagens Enfileiradas: </label> @ViewBag.cnpjB <br />
+                <label>CNPJ com menos de 1000 mensagens: </label> @ViewBag.cnpjC <br />
+                <label>Total de Mensagens Enfileiradas: </label> @ViewBag.MensagensTot
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class=panel-heading>
+                <h3 class=panel-title>Consumo de Memoria</h3>
+            </div>
+            <div class=panel-body>
+                <div class="form-group form-inline col-md-12">
+                    <label>Consumo de Memoria Atual</label>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="@ViewBag.memoria.MemoriaAtual" aria-valuemin="0" aria-valuemax="@ViewBag.memoria.MemoriaMaxima" style="width: @ViewBag.memoria.MemoriaAtualPercent">
+                            @ViewBag.memoria.MemoriaAtualString - @ViewBag.memoria.MemoriaAtualPercent
+                        </div>
+                    </div>
+                    <label>
+                        Pico: @(ViewBag.memoria.MemoriaPicoString)B <br />
+                        Max: @ViewBag.memoria.MemoriaMaximaString
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class=panel-heading>
+                <h3 class=panel-title>Mensagens: Recebe</h3>
+            </div>
+            <div class=panel-body>
+                <div class="panel col-md-12">
+                    <div class="panel panel-success">
+                        <div class="table-responsive">
+                            <table id="messagesRecebe" class="table table-hover" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Fila
+                                        </th>
+                                        <th>
+                                            CNPJ
+                                        </th>
+                                        <th>
+                                            Mensagens
+                                        </th>
+                                    </tr>
+                                </thead>
+                                @for (int i = 0; i < ViewBag.Recebe.Count; i++)
+                                {
+                                    <tr>
+
+                                        <td>@ViewBag.Recebe[i].Fila</td>
+                                        <td>@ViewBag.Recebe[i].CNPJ</td>
+                                        <td>@ViewBag.Recebe[i].Msg</td>
+
+                                    </tr>
+                                }
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class=panel-heading>
+                <h3 class=panel-title>Mensagens: Resposta</h3>
+            </div>
+            <div class=panel-body>
+                <div class="panel col-md-12">
+                    <div class="panel panel-success">
+                        <div class="table-responsive">
+                            <table id="messagesresposta" class="table table-hover" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Fila
+                                        </th>
+                                        <th>
+                                            CNPJ
+                                        </th>
+                                        <th>
+                                            Mensagens
+                                        </th>
+                                    </tr>
+                                </thead>
+                                @for (int i = 0; i < ViewBag.resposta.Count; i++)
+                                {
+                                    <tr>
+
+                                        <td>@ViewBag.resposta[i].Fila</td>
+                                        <td>@ViewBag.resposta[i].CNPJ</td>
+                                        <td>@ViewBag.resposta[i].Msg</td>
+
+                                    </tr>
+                                }
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <script src="~/js/jquery-3.2.1.min.js"></script>
+    <script src="~/js/datatables.min.js"></script>
+    <script src="~/js/tether.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/Painel.js"></script>
+
+</body>
+</html>
