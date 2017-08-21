@@ -72,4 +72,50 @@ $(document).ready(function () {
             }
         }
     });
+
+    $('#messagesbaseResposta').DataTable({
+        "Columns": [
+            null,
+            null,
+            {
+                sSortDataType: 'dom-text',
+                sType: 'numeric'
+            }
+        ],
+        "order": [[2, "desc"]],
+        "createdRow": function (row, data) {
+            if (data[2] >= 2000) {
+                $(row).addClass("alert-danger");
+            }
+            if (data[2] < 2000 && data[2] >= 1000) {
+                $(row).addClass("alert-info");
+            }
+            if (data[2] < 1000) {
+                $(row).addClass("alert-success");
+            }
+        }
+    });
+
+    $('#messagesbaseRecebe').DataTable({
+        "Columns": [
+            null,
+            null,
+            {
+                sSortDataType: 'dom-text',
+                sType: 'numeric'
+            }
+        ],
+        "order": [[2, "desc"]],
+        "createdRow": function (row, data) {
+            if (data[2] >= 2000) {
+                $(row).addClass("alert-danger");
+            }
+            if (data[2] < 2000 && data[2] >= 1000) {
+                $(row).addClass("alert-info");
+            }
+            if (data[2] < 1000) {
+                $(row).addClass("alert-success");
+            }
+        }
+    });
 } );
