@@ -56,36 +56,22 @@
         </div>
     </div>
 
-<div class="col-md-6">
+    <div class="col-md-6">
         <div class="panel panel-primary">
             <div class=panel-heading>
                 <h3 class=panel-title>Mensagens: Recebe</h3>
             </div>
             <div class=panel-body>
-                <ul class="nav nav-tabs">
-                    <li class="active"><a href="#first-tab-recebe" data-toggle="tab">CNPJ Unidade</a></li>
-                    <li><a href="#second-tab-recebe" data-toggle="tab">CNPJ Base</a></li>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane active in" id="first-tab-recebe">
-                        <div id="recebeTable">
-                            @{
-                                Html.RenderPartial("TabelaPartialView");
-                            }
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="second-tab-recebe">
-                        <div id="recebeBaseTable">
-                            @{
-                                Html.RenderPartial("TabelaPartialView");
-                            }
-                        </div>
-                    </div>
-                        </div>
-                    </div>
+                <div id="recebeTable">
+                    @{
+                        Html.RenderPartial("TabelaPartialView");
+                    }
                 </div>
+
             </div>
-        <div class="col-md-6">
+        </div>
+    </div>
+    <div class="col-md-6">
         <div class="panel panel-primary">
             <div class=panel-heading>
                 <h3 class=panel-title>Mensagens: Resposta</h3>
@@ -97,12 +83,12 @@
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active in" id="first-tab-resposta">
-                        <div id="recebeTable">
+                        <div id="respostaTable">
                             @{
                                 Html.RenderPartial("TabelaPartialView");
                             }
                         </div>
-                     </div>
+                    </div>
                     <div class="tab-pane" id="second-tab-resposta">
                         <div id="recebeBaseTable">
                             @{
@@ -110,26 +96,26 @@
                             }
                         </div>
                     </div>
-                    </div>
                 </div>
+            </div>
         </div>
     </div>
-  
+
     <script src="~/js/jquery-3.2.1.min.js"></script>
     <script src="~/js/datatables.min.js"></script>
     <script src="~/js/tether.min.js"></script>
     <script src="~/js/bootstrap.min.js"></script>
     <script src="~/js/Painel.js"></script>
-	
-	</br>
-	</br>
-	</br>
-	</br>
-	<div class="col-md-6">
-	<label>Desenvolvido por: </label> Alexsander Camargo
-	</br>
-	<label>Git: </label>https://github.com/csalexsander/MonitorOobj
-	</div>
+
+    </br>
+    </br>
+    </br>
+    </br>
+    <div class="col-md-6">
+        <label>Desenvolvido por: </label> Alexsander Camargo
+        </br>
+        <label>Git: </label>https://github.com/csalexsander/MonitorOobj
+    </div>
 
 </body>
 </html>
