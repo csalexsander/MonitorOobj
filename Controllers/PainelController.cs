@@ -16,42 +16,80 @@ namespace MonitorOobj.Controllers
         public string respostaJson { get; set; }
         public string memoriaJson { get; set; }
 
+
         // GET: Painel
         public ActionResult Index()
         {
-            CNPJ_A = CNPJ_B = CNPJ_C = MensagensTot = 0;
-            memoria = new Memoria();
+            Memoria();
+            Estatisticas();
+            return View("Index");
+        }
+
+        // GET: PartialView
+        public PartialViewResult TabelaPartialView(string mensagem)
+        {
+            switch (mensagem)
+            {
+                case "Recebe":
+                    Recebe();
+                    break;
+                case "Resposta":
+                    Recebe();
+                    break;
+            }
+
+            return PartialView("TabelaPartialView");
+        }
+
+        private void Resposta()
+        {
+           var filaresposta = new List<Mensagens>();
+                                 
+            respostaJson = BuscaJson("respostasPorCnpj");
+
+            respostaJson = RemoveCaracteresIndesejados(respostaJson);
+
+            var splitresposta = respostaJson.Split(',');
+
+            PopulaVariavelAndLista(splitresposta, ref filaresposta);
+           
+            var listaBaseResposta = RetornaListaBase(filaresposta);
+           
+            ViewBag.unidade = filaresposta;
             
+            ViewBag.empresa = listaBaseResposta;
+        }
 
+        private void Recebe()
+        {
+            var filaRecebe = new List<Mensagens>();
 
-            BuscaJson(respostaJson, recebeJson, memoriaJson);
+            recebeJson = BuscaJson("recebePorCnpj");
 
-            RemoveCaracteresIndesejados();
+            recebeJson = RemoveCaracteresIndesejados(recebeJson);
 
-            memoriaJson = RemoveCaracteresIndesejadosMemoria(memoriaJson);
+            var splitRecebe = recebeJson.Split(',');
+
+            PopulaVariavelAndLista(splitRecebe, ref filaRecebe);
+
+            var listaBaseRecebe = RetornaListaBase(filaRecebe);
+
+            ViewBag.unidade = filaRecebe;
+
+            ViewBag.empresa = listaBaseRecebe;
+        }
+
+        private void Memoria()
+        {
+            memoriaJson = BuscaJson("memoriaDisponivel");
+
+            memoria = new Memoria();
+
+            memoriaJson = RemoveCaracteresIndesejados(memoriaJson);
 
             PopulaVariavelMemoria(memoriaJson);
 
-            var splitRecebe = recebeJson.Split(',');
-            var splitresposta = respostaJson.Split(',');
-
-            var filaRecebe = new List<Mensagens>();
-            var filaresposta = new List<Mensagens>();
-
-            PopulaVariavelRecebe(splitRecebe, ref filaRecebe);
-            PopulaVariavelresposta(splitresposta, ref filaresposta);
-            var listaBaseRecebe = RetornaListaBase(filaRecebe);
-            var listaBaseResposta = RetornaListaBase(filaresposta);
             ViewBag.memoria = memoria;
-            ViewBag.Recebe = filaRecebe;
-            ViewBag.resposta = filaresposta;
-            ViewBag.baseRecebe = listaBaseRecebe;
-            ViewBag.baseResposta = listaBaseResposta;
-            ViewBag.MensagensTot = MensagensTot;
-            ViewBag.cnpjA = CNPJ_A;
-            ViewBag.cnpjB = CNPJ_B;
-            ViewBag.cnpjC = CNPJ_C;
-            return View("Index");
         }
 
         private void PopulaVariavelMemoria(string memoriaJson)
@@ -64,16 +102,7 @@ namespace MonitorOobj.Controllers
             memoria.MemoriaPicoString = memory[3].Split(':')[1];
         }
 
-        private static string RemoveCaracteresIndesejadosMemoria(string memoriaJson)
-        {
-            memoriaJson = memoriaJson.Replace("{", "");
-            memoriaJson = memoriaJson.Replace("}", "");
-            memoriaJson = memoriaJson.Replace('"', ' ');
-            memoriaJson = memoriaJson.Replace(" ", "");
-            return memoriaJson;
-        }
-
-        private void PopulaVariavelRecebe(string[] split, ref List<Mensagens> fila)
+        private void PopulaVariavelAndLista(string[] split, ref List<Mensagens> fila, bool calcula = false)
         {
             foreach (var t in split)
             {
@@ -81,6 +110,8 @@ namespace MonitorOobj.Controllers
                 var temp = t.Split(':');
                 msg.Fila = temp[0];
                 msg.Msg = temp[2];
+
+                if (calcula) { 
                 if (int.Parse(msg.Msg) > 2000)
                 {
                     CNPJ_A++;
@@ -94,59 +125,34 @@ namespace MonitorOobj.Controllers
                     CNPJ_C++;
                 }
                 MensagensTot += int.Parse(msg.Msg);
+                }
+
                 msg.CNPJ = temp[1];
                 fila.Add(msg);
             }
         }
 
-        private void PopulaVariavelresposta(string[] split, ref List<Mensagens> fila)
+        private string RemoveCaracteresIndesejados(string json)
         {
-            foreach (var t in split)
-            {
-                var msg = new Mensagens();
-                var temp = t.Split(':');
-                msg.Fila = temp[0];
-                msg.Msg = temp[2];
-                if (int.Parse(msg.Msg) > 2000)
-                {
-                    CNPJ_A++;
-                }
-                else if (int.Parse(msg.Msg) > 1000)
-                {
-                    CNPJ_B++;
-                }
-                else
-                {
-                    CNPJ_C++;
-                }
-                MensagensTot += int.Parse(msg.Msg);
-                msg.CNPJ = temp[1];
-                fila.Add(msg);
-            }
+            json = json.Replace("{", "");
+            json = json.Replace("}", "");
+            json = json.Replace('"', ' ');
+            json = json.Replace(" ", "");
+
+            return json;
         }
 
-        private void RemoveCaracteresIndesejados()
+        private string BuscaJson(string desejado)
         {
-            recebeJson = recebeJson.Replace("{", "");
-            recebeJson = recebeJson.Replace("}", "");
-            recebeJson = recebeJson.Replace('"', ' ');
-            respostaJson = respostaJson.Replace("{", "");
-            respostaJson = respostaJson.Replace("}", "");
-            respostaJson = respostaJson.Replace('"', ' ');
-
-        }
-
-        private void BuscaJson(string resposta, string recebe, string memoria)
-        {
+            string json = "";
             using (var wc = new HttpClient())
             {
-                respostaJson = wc.GetStringAsync(@"http://redis.oobj-dfe.com.br/respostasPorCnpj").Result;
-                recebeJson = wc.GetStringAsync(@"http://redis.oobj-dfe.com.br/recebePorCnpj").Result;
-                memoriaJson = wc.GetStringAsync(@"http://redis.oobj-dfe.com.br/memoriaDisponivel").Result;
+                json = wc.GetStringAsync(@"http://redis.oobj-dfe.com.br/"+ desejado).Result;
             }
 
+            return json;
         }
-
+            
         private List<Mensagens> RetornaListaBase(List<Mensagens> listaMensagens)
         {
             var listaBase = new List<Mensagens>();
@@ -179,5 +185,27 @@ namespace MonitorOobj.Controllers
 
             return listaBase;
         }
+
+        private void Estatisticas()
+        {
+            CNPJ_A = CNPJ_B = CNPJ_C = MensagensTot = 0;
+
+            var json = BuscaJson("respostasPorCnpj");
+            json += BuscaJson("," + "recebePorCnpj");
+
+            json = RemoveCaracteresIndesejados(json);
+
+            var splitjson = json.Split(',');
+
+            var listajson = new List<Mensagens>();
+
+            PopulaVariavelAndLista(splitjson, ref listajson, true);
+
+            ViewBag.cnpjB = CNPJ_B;
+            ViewBag.cnpjC = CNPJ_C;
+            ViewBag.cnpjA = CNPJ_A;
+            ViewBag.MensagensTot = MensagensTot;
+        }
+
     }
 }

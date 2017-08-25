@@ -68,69 +68,17 @@
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active in" id="first-tab-recebe">
-                        <div class="panel  col-md-12">
-                            <div class="panel panel-success">
-                                <div class="table-responsive">
-                                    <table id="messagesRecebe" class="table table-hover" cellspacing="0" width="100%">
-                                        <thead>
-                                            <tr>
-                                                <th>
-                                                    Fila
-                                                </th>
-                                                <th>
-                                                    CNPJ
-                                                </th>
-                                                <th>
-                                                    Mensagens
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        @for (int i = 0; i < ViewBag.Recebe.Count; i++)
-                                        {
-                                            <tr>
-
-                                                <td>@ViewBag.Recebe[i].Fila</td>
-                                                <td>@ViewBag.Recebe[i].CNPJ</td>
-                                                <td>@ViewBag.Recebe[i].Msg</td>
-
-                                            </tr>
-                                        }
-                                    </table>
-                                </div>
-                            </div>
+                        <div id="recebeTable">
+                            @{
+                                Html.RenderPartial("TabelaPartialView");
+                            }
                         </div>
-                            </div>
+                    </div>
                     <div class="tab-pane" id="second-tab-recebe">
-                        <div class="panel  col-md-12">
-                            <div class="panel panel-success">
-                                <div class="table-responsive">
-                                    <table id="messagesbaseRecebe" class="table table-hover" cellspacing="0" width="100%">
-                                        <thead>
-                                            <tr>
-                                                <th>
-                                                    Fila
-                                                </th>
-                                                <th>
-                                                    CNPJ
-                                                </th>
-                                                <th>
-                                                    Mensagens
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        @for (int i = 0; i < ViewBag.baseRecebe.Count; i++)
-                                        {
-                                            <tr>
-
-                                                <td>@ViewBag.baseRecebe[i].Fila</td>
-                                                <td>@ViewBag.baseRecebe[i].CNPJ</td>
-                                                <td>@ViewBag.baseRecebe[i].Msg</td>
-
-                                            </tr>
-                                        }
-                                    </table>
-                                </div>
-                            </div>
+                        <div id="recebeBaseTable">
+                            @{
+                                Html.RenderPartial("TabelaPartialView");
+                            }
                         </div>
                     </div>
                         </div>
@@ -149,69 +97,17 @@
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active in" id="first-tab-resposta">
-                        <div class="panel col-md-12">
-                            <div class="panel panel-success">
-                                <div class="table-responsive">
-                                    <table id="messagesresposta" class="table table-hover" cellspacing="0" width="100%">
-                                        <thead>
-                                            <tr>
-                                                <th>
-                                                    Fila
-                                                </th>
-                                                <th>
-                                                    CNPJ
-                                                </th>
-                                                <th>
-                                                    Mensagens
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        @for (int i = 0; i < ViewBag.resposta.Count; i++)
-                                        {
-                                            <tr>
-
-                                                <td>@ViewBag.resposta[i].Fila</td>
-                                                <td>@ViewBag.resposta[i].CNPJ</td>
-                                                <td>@ViewBag.resposta[i].Msg</td>
-
-                                            </tr>
-                                        }
-                                    </table>
-                                </div>
-                                </div>
-                            </div>
+                        <div id="recebeTable">
+                            @{
+                                Html.RenderPartial("TabelaPartialView");
+                            }
                         </div>
+                     </div>
                     <div class="tab-pane" id="second-tab-resposta">
-                        <div class="panel col-md-12">
-                            <div class="panel panel-success">
-                                <div class="table-responsive">
-                                    <table id="messagesbaseResposta" class="table table-hover" cellspacing="0" width="100%">
-                                        <thead>
-                                            <tr>
-                                                <th>
-                                                    Fila
-                                                </th>
-                                                <th>
-                                                    CNPJ
-                                                </th>
-                                                <th>
-                                                    Mensagens
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        @for (int i = 0; i < ViewBag.baseResposta.Count; i++)
-                                        {
-                                            <tr>
-
-                                                <td>@ViewBag.baseResposta[i].Fila</td>
-                                                <td>@ViewBag.baseResposta[i].CNPJ</td>
-                                                <td>@ViewBag.baseResposta[i].Msg</td>
-
-                                            </tr>
-                                        }
-                                    </table>
-                                </div>
-                            </div>
+                        <div id="recebeBaseTable">
+                            @{
+                                Html.RenderPartial("TabelaPartialView");
+                            }
                         </div>
                     </div>
                     </div>
@@ -224,6 +120,16 @@
     <script src="~/js/tether.min.js"></script>
     <script src="~/js/bootstrap.min.js"></script>
     <script src="~/js/Painel.js"></script>
+	
+	</br>
+	</br>
+	</br>
+	</br>
+	<div class="col-md-6">
+	<label>Desenvolvido por: </label> Alexsander Camargo
+	</br>
+	<label>Git: </label>https://github.com/csalexsander/MonitorOobj
+	</div>
 
 </body>
 </html>
