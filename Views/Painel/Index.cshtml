@@ -64,7 +64,7 @@
             <div class=panel-body>
                 <div id="recebeTable">
                     @{
-                        Html.RenderPartial("TabelaPartialView");
+                        Html.RenderPartial("TabelaPartialViewRecebe");
                     }
                 </div>
 
@@ -77,25 +77,10 @@
                 <h3 class=panel-title>Mensagens: Resposta</h3>
             </div>
             <div class=panel-body>
-                <ul class="nav nav-tabs">
-                    <li class="active"><a href="#first-tab-resposta" data-toggle="tab">CNPJ Unidade</a></li>
-                    <li><a href="#second-tab-resposta" data-toggle="tab">CNPJ Base</a></li>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane active in" id="first-tab-resposta">
-                        <div id="respostaTable">
-                            @{
-                                Html.RenderPartial("TabelaPartialView");
-                            }
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="second-tab-resposta">
-                        <div id="recebeBaseTable">
-                            @{
-                                Html.RenderPartial("TabelaPartialView");
-                            }
-                        </div>
-                    </div>
+                <div id="respostaTable">
+                    @{
+                        Html.RenderPartial("TabelaPartialViewResposta");
+                    }
                 </div>
             </div>
         </div>
@@ -107,13 +92,13 @@
     <script src="~/js/bootstrap.min.js"></script>
     <script src="~/js/Painel.js"></script>
 
-    </br>
-    </br>
-    </br>
-    </br>
+    <br/>
+    <br />
+    <br />
+    <br />
     <div class="col-md-6">
         <label>Desenvolvido por: </label> Alexsander Camargo
-        </br>
+        <br />
         <label>Git: </label>https://github.com/csalexsander/MonitorOobj
     </div>
 

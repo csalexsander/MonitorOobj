@@ -22,23 +22,27 @@ namespace MonitorOobj.Controllers
         {
             Memoria();
             Estatisticas();
+            Recebe();
+            Resposta();
             return View("Index");
         }
 
         // GET: PartialView
-        public PartialViewResult TabelaPartialView(string mensagem)
+        public PartialViewResult TabelaPartialViewRecebe()
         {
-            switch (mensagem)
-            {
-                case "Recebe":
-                    Recebe();
-                    break;
-                case "Resposta":
-                    Recebe();
-                    break;
-            }
+           
+            Recebe();
+           
+            return PartialView("TabelaPartialViewRecebe");
+        }
 
-            return PartialView("TabelaPartialView");
+        // GET: PartialView
+        public PartialViewResult TabelaPartialViewResposta()
+        {
+
+            Resposta();
+
+            return PartialView("TabelaPartialViewResposta");
         }
 
         private void Resposta()
@@ -55,9 +59,9 @@ namespace MonitorOobj.Controllers
            
             var listaBaseResposta = RetornaListaBase(filaresposta);
            
-            ViewBag.unidade = filaresposta;
+            ViewBag.unidadeResposta = filaresposta;
             
-            ViewBag.empresa = listaBaseResposta;
+            ViewBag.empresaResposta = listaBaseResposta;
         }
 
         private void Recebe()
@@ -74,9 +78,9 @@ namespace MonitorOobj.Controllers
 
             var listaBaseRecebe = RetornaListaBase(filaRecebe);
 
-            ViewBag.unidade = filaRecebe;
+            ViewBag.unidadeRecebe = filaRecebe;
 
-            ViewBag.empresa = listaBaseRecebe;
+            ViewBag.empresaRecebe = listaBaseRecebe;
         }
 
         private void Memoria()
@@ -145,9 +149,10 @@ namespace MonitorOobj.Controllers
         private string BuscaJson(string desejado)
         {
             string json = "";
+            string url = @"http://redis.oobj-dfe.com.br/" + desejado;
             using (var wc = new HttpClient())
             {
-                json = wc.GetStringAsync(@"http://redis.oobj-dfe.com.br/"+ desejado).Result;
+                json = wc.GetStringAsync(url).Result;
             }
 
             return json;
@@ -191,7 +196,7 @@ namespace MonitorOobj.Controllers
             CNPJ_A = CNPJ_B = CNPJ_C = MensagensTot = 0;
 
             var json = BuscaJson("respostasPorCnpj");
-            json += BuscaJson("," + "recebePorCnpj");
+            json += "," + BuscaJson("recebePorCnpj");
 
             json = RemoveCaracteresIndesejados(json);
 

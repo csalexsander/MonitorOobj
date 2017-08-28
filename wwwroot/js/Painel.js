@@ -28,17 +28,53 @@ $.fn.dataTable.ext.order['dom-checkbox'] = function (settings, col) {
 
 $(document).ready(function () {
 
-    $('.data-table-painel').DataTable({
+    AplicarDataTableResposta();
+    AplicarDataTableRecebe();
+
+    $("#btnRespostaIniciar").on("click", function () {
+
+        var tempo = $("#tempoResposta").val();
+
+        if (tempo === undefined || tempo > "0") {
+            tempo = (tempo * 1000);
+            setInterval(AtualizarPartialViewResposta, parseInt(tempo));
+            alert("Atualizacao Automatica Iniciada");
+        } else {
+            alert("Defina um valor maior que 0");
+        }
+    });
+
+});
+
+function AtualizarPartialViewResposta(){
+    console.log("Atualizando tabela");
+    $.ajax(
+        {
+            type: 'GET',
+            url: '/Painel/TabelaPartialViewResposta',
+            dataType: 'html',
+            cache: false,
+            async: true,
+            success: function (data) {
+                $('#respostaTable').html(data);
+                AplicarDataTableResposta();
+            }
+        });
+
+};
+
+function AplicarDataTableResposta() {
+    $('.data-table-painel-resposta').DataTable({
         "Columns": [
             null,
             null,
             {
-            sSortDataType: 'dom-text',
-            sType: 'numeric'
-        }
+                sSortDataType: 'dom-text',
+                sType: 'numeric'
+            }
         ],
         "order": [[2, "desc"]],
-        "createdRow": function(row, data) {
+        "createdRow": function (row, data) {
             if (data[2] >= 2000) {
                 $(row).addClass("alert-danger");
             }
@@ -50,4 +86,29 @@ $(document).ready(function () {
             }
         }
     });
-} );
+}
+
+function AplicarDataTableRecebe() {
+    $('.data-table-painel').DataTable({
+        "Columns": [
+            null,
+            null,
+            {
+                sSortDataType: 'dom-text',
+                sType: 'numeric'
+            }
+        ],
+        "order": [[2, "desc"]],
+        "createdRow": function (row, data) {
+            if (data[2] >= 2000) {
+                $(row).addClass("alert-danger");
+            }
+            if (data[2] < 2000 && data[2] >= 1000) {
+                $(row).addClass("alert-info");
+            }
+            if (data[2] < 1000) {
+                $(row).addClass("alert-success");
+            }
+        }
+    });
+}
