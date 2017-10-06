@@ -30,21 +30,60 @@ $(document).ready(function () {
 
     AplicarDataTableResposta();
     AplicarDataTableRecebe();
+    var intervalResposta;
+    var intervalRecebe;
 
+        DefinirInicioResposta();
+        DefinirParadaResposta();
+        DefinirInicioRecebe();
+        DefinirParadaRecebe();
+});
+
+function DefinirParadaResposta()
+{
+    $("#btnRespostaParar").on("click", function () {
+        clearInterval(intervalResposta);
+        alert("Atualização Automatica desabilitada");
+    });
+}
+
+function DefinirInicioResposta()
+{
     $("#btnRespostaIniciar").on("click", function () {
 
         var tempo = $("#tempoResposta").val();
 
         if (tempo === undefined || tempo > "0") {
             tempo = (tempo * 1000);
-            setInterval(AtualizarPartialViewResposta, parseInt(tempo));
-            alert("Atualizacao Automatica Iniciada");
+            intervalResposta = setInterval(AtualizarPartialViewResposta, parseInt(tempo));
+            alert("Atualizacao Automatica Iniciada com um intervalo de" + (tempo / 1000) + " Segundos");
         } else {
             alert("Defina um valor maior que 0");
         }
     });
+}
 
-});
+function DefinirParadaRecebe() {
+    $("#btnRecebeParar").on("click", function () {
+        clearInterval(intervalRecebe);
+        alert("Atualização Automatica desabilitada");
+    });
+}
+
+function DefinirInicioRecebe() {
+    $("#btnRecebeIniciar").on("click", function () {
+
+        var tempo = $("#tempoRecebe").val();
+
+        if (tempo === undefined || tempo > "0") {
+            tempo = (tempo * 1000);
+            intervalRecebe = setInterval(AtualizarPartialViewRecebe, parseInt(tempo));
+            alert("Atualizacao Automatica Iniciada com um intervalo de" + (tempo / 1000) + " Segundos");
+        } else {
+            alert("Defina um valor maior que 0");
+        }
+    });
+}
 
 function AtualizarPartialViewResposta(){
     console.log("Atualizando tabela");
@@ -58,6 +97,46 @@ function AtualizarPartialViewResposta(){
             success: function (data) {
                 $('#respostaTable').html(data);
                 AplicarDataTableResposta();
+                DefinirInicioResposta();
+                DefinirParadaResposta();
+            }
+        });
+
+};
+
+function AtualizarPartialViewResposta() {
+    console.log("Atualizando tabela");
+    $.ajax(
+        {
+            type: 'GET',
+            url: '/Painel/TabelaPartialViewResposta',
+            dataType: 'html',
+            cache: false,
+            async: true,
+            success: function (data) {
+                $('#respostaTable').html(data);
+                AplicarDataTableResposta();
+                DefinirInicioRecebe();
+                DefinirParadaRecebe();
+            }
+        });
+
+};
+
+function AtualizarPartialViewRecebe() {
+    console.log("Atualizando tabela");
+    $.ajax(
+        {
+            type: 'GET',
+            url: '/Painel/TabelaPartialViewRecebe',
+            dataType: 'html',
+            cache: false,
+            async: true,
+            success: function (data) {
+                $('#recebeTable').html(data);
+                AplicarDataTableRecebe();
+                DefinirInicioRecebe();
+                DefinirParadaRecebe();
             }
         });
 
