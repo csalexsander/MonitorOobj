@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using MonitorOobj.Context;
+using Microsoft.EntityFrameworkCore;
+using MonitorOobj.Models;
 
 namespace MonitorOobj
 {
@@ -27,12 +30,15 @@ namespace MonitorOobj
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Add Context as Service
+            services.AddDbContext<Contexto>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("ConexaoSQLServer")));
             // Add framework services.
             services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, Contexto _contexto)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
@@ -55,6 +61,8 @@ namespace MonitorOobj
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            InicializaDB.Initialize(_contexto);
         }
     }
 }
