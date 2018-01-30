@@ -38,5 +38,9 @@ namespace MonitorOobj.Controllers
             return View();
         }
 
+        public ActionResult ResetSenha()
+        {
+            return View();
+        }
     }
 }
