@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MonitorOobj</title>
+    @RenderSection("stylesheet", required:false)
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/css/tether-theme-arrows-dark.min.css" rel="stylesheet" />
+    <link href="~/css/tether-theme-arrows.min.css" rel="stylesheet" />
+    <link href="~/css/tether-theme-basic.min.css" rel="stylesheet" />
+    <link href="~/css/tether.min.css" rel="stylesheet" />
+    <link href="~/css/LayoutMonitor.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container body-content">
+
+            <div>
+                <nav class="navbar navbar-inverse navbar-fixed-top menusuperior">
+                    <div class="container-fluid menusuperior">
+                        <div class="navbar-header ">
+                            <a class="navbar-brand " href="#">Monitor Redis Oobj</a>
+                        </div>
+                        <ul class="nav navbar-nav">
+                            <li><a href="#">Monitoramento</a></li>
+                            <li><a href="/painel">Filas</a></li>
+                            <li><a href="#">Relatorios</a></li>
+                        </ul>
+                        <button class="btn btn-danger navbar-btn pull-right">Logoff</button>
+                    </div>
+                </nav>
+            </div>
+            <br />
+            <br />
+            <br />
+            @RenderBody()
+            <hr />
+            <footer class="navbar-fixed-bottom text-center">
+                <p>&copy; 2018 - Alexsander Camargo - Todos os direitos reservados a empresa Oobj Tecnologia da Informação</p>
+            </footer>
+
+        @RenderSection("scripts", required: false)
+    </div>
+</body>
+</html>

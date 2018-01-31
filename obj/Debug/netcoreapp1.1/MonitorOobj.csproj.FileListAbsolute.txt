@@ -17,3 +17,4 @@ E:\Projetos\MonitorOobj\obj\Debug\netcoreapp1.1\MonitorOobj.AssemblyInfoInputs.c
 E:\Projetos\MonitorOobj\obj\Debug\netcoreapp1.1\MonitorOobj.AssemblyInfo.cs
 E:\Projetos\MonitorOobj\obj\Debug\netcoreapp1.1\MonitorOobj.dll
 E:\Projetos\MonitorOobj\obj\Debug\netcoreapp1.1\MonitorOobj.pdb
+E:\Projetos\MonitorOobj\obj\Debug\netcoreapp1.1\MonitorOobj.csprojResolveAssemblyReference.cache

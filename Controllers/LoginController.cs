@@ -13,29 +13,43 @@ namespace MonitorOobj.Controllers
     public class LoginController : Controller
     {
         private readonly Contexto _context;
-        public string Email { get; set; }
-        public string Senha { get; set; }
+
+        private Login login;
 
         public LoginController(Contexto context)
         {
-            _context = context;    
+            _context = context;
+            login = new Login();
         }
 
         // GET: Login/Create
         public ActionResult Index()
         {
-            var user = _context.Login.Single(b => b.Email == Email);
+            return View(login);
+        }
 
-            if (String.IsNullOrEmpty(user.Email) && user.Senha == Senha)
+        public ActionResult Logar(Login Model)
+        {
+            var user = _context.Login.FirstOrDefault(b => b.Email.Equals(Model.Email));
+
+            if (user != null)
             {
-                //Login com sucesso
+                if (user.Senha.Equals(Model.Senha))
+                {
+                    Console.WriteLine("Login com sucesso");
+                    return RedirectPermanent("/Painel");
+                }
+                else
+                {
+                    Console.WriteLine("Usuario ou senha incorretos");
+                }
             }
             else
             {
-                //Usuario ou senha incorreto
+                Console.WriteLine("Usuario ou senha incorretos");
             }
-            
-            return View();
+
+            return RedirectPermanent("Index");
         }
 
         public ActionResult ResetSenha()
