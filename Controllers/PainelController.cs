@@ -24,7 +24,7 @@ namespace MonitorOobj.Controllers
             Estatisticas();
             Recebe();
             Resposta();
-            return View("Index");
+            return View("Index", "LayoutMonitor");
         }
 
         // GET: PartialView

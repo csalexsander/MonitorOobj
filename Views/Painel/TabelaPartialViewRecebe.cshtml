@@ -5,84 +5,84 @@
 </ul>
 <div class="tab-content">
     <div class="tab-pane active in" id="first-tab-recebe">
-            <div class="panel  col-md-12">
-                <div class="panel panel-success">
-                    <div class="table-responsive">
-                        <table id="messagesRecebe" class="table table-hover data-table-painel" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        Fila
-                                    </th>
-                                    <th>
-                                        CNPJ
-                                    </th>
-                                    <th>
-                                        Mensagens
-                                    </th>
-                                </tr>
-                            </thead>
-                            @for (int i = 0; i < ViewBag.unidadeRecebe.Count; i++)
-                                            {
-                                <tr>
+        <div class="panel  col-md-12">
+            <div class="panel panel-success">
+                <div class="table-responsive">
+                    <table id="messagesRecebe" class="table table-hover data-table-painel" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Fila
+                                </th>
+                                <th>
+                                    CNPJ
+                                </th>
+                                <th>
+                                    Mensagens
+                                </th>
+                            </tr>
+                        </thead>
+                        @for (int i = 0; i < ViewBag.unidadeRecebe.Count; i++)
+                        {
+                            <tr>
 
-                                    <td>@ViewBag.unidadeRecebe[i].Fila</td>
-                                    <td>@ViewBag.unidadeRecebe[i].CNPJ</td>
-                                    <td>@ViewBag.unidadeRecebe[i].Msg</td>
+                                <td>@ViewBag.unidadeRecebe[i].Fila</td>
+                                <td>@ViewBag.unidadeRecebe[i].CNPJ</td>
+                                <td>@ViewBag.unidadeRecebe[i].Msg</td>
 
-                                </tr>
-                                            }
-                        </table>
-                    </div>
+                            </tr>
+                        }
+                    </table>
+                </div>
             </div>
         </div>
     </div>
     <div class="tab-pane" id="second-tab-recebe">
-            <div class="panel  col-md-12">
-                <div class="panel panel-success">
-                    <div class="table-responsive">
-                        <table id="messagesRecebe" class="table table-hover data-table-painel" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        Fila
-                                    </th>
-                                    <th>
-                                        CNPJ
-                                    </th>
-                                    <th>
-                                        Mensagens
-                                    </th>
-                                </tr>
-                            </thead>
-                            @for (int i = 0; i < ViewBag.empresaRecebe.Count; i++)
-                                            {
-                                <tr>
+        <div class="panel  col-md-12">
+            <div class="panel panel-success">
+                <div class="table-responsive">
+                    <table id="messagesRecebe" class="table table-hover data-table-painel" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Fila
+                                </th>
+                                <th>
+                                    CNPJ
+                                </th>
+                                <th>
+                                    Mensagens
+                                </th>
+                            </tr>
+                        </thead>
+                        @for (int i = 0; i < ViewBag.empresaRecebe.Count; i++)
+                        {
+                            <tr>
 
-                                    <td>@ViewBag.empresaRecebe[i].Fila</td>
-                                    <td>@ViewBag.empresaRecebe[i].CNPJ</td>
-                                    <td>@ViewBag.empresaRecebe[i].Msg</td>
+                                <td>@ViewBag.empresaRecebe[i].Fila</td>
+                                <td>@ViewBag.empresaRecebe[i].CNPJ</td>
+                                <td>@ViewBag.empresaRecebe[i].Msg</td>
 
-                                </tr>
-                                            }
-                        </table>
-                    </div>
+                            </tr>
+                        }
+                    </table>
                 </div>
-            </div>
-        </div>
-        <div class="tab-pane" id="third-tab-recebe">
-            <div class="form form-inline col-md-12">
-                <br />
-                <label>Definir atualizacao da tabela</label>
-                <br />
-                <br />
-                <div class="form form-group col-md-8">
-                    <label>Tempo: </label>
-                    <input type="text" id="tempoRecebe" class="form form-control" placeholder="Insira um tempo" />
-                    <label>Segundo(s)</label>
-                </div>
-                <button class="btn btn-success" id="btnRecebeIniciar">Iniciar</button>
-                <button class="btn btn-danger" id="btnRecebeParar">Parar</button>
             </div>
         </div>
     </div>
+    <div class="tab-pane" id="third-tab-recebe">
+        <div class="form form-inline col-md-12">
+            <br />
+            <label>Definir atualizacao da tabela</label>
+            <br />
+            <br />
+            <div class="form form-group col-md-8">
+                <label>Tempo: </label>
+                <input type="text" id="tempoRecebe" class="form form-control" placeholder="Insira um tempo" />
+                <label>Segundo(s)</label>
+            </div>
+            <button class="btn btn-success" id="btnRecebeIniciar">Iniciar</button>
+            <button class="btn btn-danger" id="btnRecebeParar">Parar</button>
+        </div>
+    </div>
+</div>

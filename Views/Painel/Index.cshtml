@@ -1,26 +1,9 @@
 ﻿
 @{
-    Layout = null;
+    ViewData["Title"] = "Painel";
+    Layout = "~/Views/Shared/LayoutMonitor.cshtml";
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Painel</title>
-    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/css/jquery.dataTables.min.css" rel="stylesheet" />
-    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/css/bootstrap-theme.min.css" rel="stylesheet" />
-    <link href="~/css/tether-theme-arrows-dark.min.css" rel="stylesheet" />
-    <link href="~/css/tether-theme-arrows.min.css" rel="stylesheet" />
-    <link href="~/css/tether-theme-basic.min.css" rel="stylesheet" />
-    <link href="~/css/tether.min.css" rel="stylesheet" />
-
-</head>
-<body>
-
+<div>
     <div class="col-md-6">
         <div class="panel panel-primary">
             <div class=panel-heading>
@@ -86,13 +69,7 @@
         </div>
     </div>
 
-    <script src="~/js/jquery-3.2.1.min.js"></script>
-    <script src="~/js/datatables.min.js"></script>
-    <script src="~/js/tether.min.js"></script>
-    <script src="~/js/bootstrap.min.js"></script>
-    <script src="~/js/Painel.js"></script>
-
-    <br/>
+    <br />
     <br />
     <br />
     <br />
@@ -102,5 +79,8 @@
         <label>Git: </label>https://github.com/csalexsander/MonitorOobj
     </div>
 
-</body>
-</html>
+    @section scripts{
+        <script src="~/js/Painel.js"></script>
+    }
+
+</div>
