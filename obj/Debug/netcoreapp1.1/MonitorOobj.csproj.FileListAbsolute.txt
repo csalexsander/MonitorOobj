@@ -1,20 +1,9 @@
-c:\users\alexsander camargo\documents\visual studio 2017\Projects\MonitorOobj\MonitorOobj\bin\Debug\netcoreapp1.1\MonitorOobj.deps.json
-c:\users\alexsander camargo\documents\visual studio 2017\Projects\MonitorOobj\MonitorOobj\bin\Debug\netcoreapp1.1\MonitorOobj.runtimeconfig.json
-c:\users\alexsander camargo\documents\visual studio 2017\Projects\MonitorOobj\MonitorOobj\bin\Debug\netcoreapp1.1\MonitorOobj.runtimeconfig.dev.json
-c:\users\alexsander camargo\documents\visual studio 2017\Projects\MonitorOobj\MonitorOobj\bin\Debug\netcoreapp1.1\MonitorOobj.dll
-c:\users\alexsander camargo\documents\visual studio 2017\Projects\MonitorOobj\MonitorOobj\bin\Debug\netcoreapp1.1\MonitorOobj.pdb
-c:\users\alexsander camargo\documents\visual studio 2017\Projects\MonitorOobj\MonitorOobj\obj\Debug\netcoreapp1.1\MonitorOobj.csprojResolveAssemblyReference.cache
-c:\users\alexsander camargo\documents\visual studio 2017\Projects\MonitorOobj\MonitorOobj\obj\Debug\netcoreapp1.1\MonitorOobj.AssemblyInfo.cs
-c:\users\alexsander camargo\documents\visual studio 2017\Projects\MonitorOobj\MonitorOobj\obj\Debug\netcoreapp1.1\MonitorOobj.dll
-c:\users\alexsander camargo\documents\visual studio 2017\Projects\MonitorOobj\MonitorOobj\obj\Debug\netcoreapp1.1\MonitorOobj.pdb
-E:\Projetos\MonitorOobj\bin\Debug\netcoreapp1.1\MonitorOobj.deps.json
-E:\Projetos\MonitorOobj\bin\Debug\netcoreapp1.1\MonitorOobj.runtimeconfig.json
-E:\Projetos\MonitorOobj\bin\Debug\netcoreapp1.1\MonitorOobj.runtimeconfig.dev.json
-E:\Projetos\MonitorOobj\bin\Debug\netcoreapp1.1\MonitorOobj.dll
-E:\Projetos\MonitorOobj\bin\Debug\netcoreapp1.1\MonitorOobj.pdb
-E:\Projetos\MonitorOobj\obj\Debug\netcoreapp1.1\MonitorOobj.csproj.CoreCompileInputs.cache
-E:\Projetos\MonitorOobj\obj\Debug\netcoreapp1.1\MonitorOobj.AssemblyInfoInputs.cache
-E:\Projetos\MonitorOobj\obj\Debug\netcoreapp1.1\MonitorOobj.AssemblyInfo.cs
-E:\Projetos\MonitorOobj\obj\Debug\netcoreapp1.1\MonitorOobj.dll
-E:\Projetos\MonitorOobj\obj\Debug\netcoreapp1.1\MonitorOobj.pdb
-E:\Projetos\MonitorOobj\obj\Debug\netcoreapp1.1\MonitorOobj.csprojResolveAssemblyReference.cache
+C:\Users\Alexsander Camargo\documents\visual studio 2017\Projects\MonitorOobj\MonitorOobj\bin\Debug\netcoreapp1.1\MonitorOobj.deps.json
+C:\Users\Alexsander Camargo\documents\visual studio 2017\Projects\MonitorOobj\MonitorOobj\bin\Debug\netcoreapp1.1\MonitorOobj.runtimeconfig.json
+C:\Users\Alexsander Camargo\documents\visual studio 2017\Projects\MonitorOobj\MonitorOobj\bin\Debug\netcoreapp1.1\MonitorOobj.runtimeconfig.dev.json
+C:\Users\Alexsander Camargo\documents\visual studio 2017\Projects\MonitorOobj\MonitorOobj\bin\Debug\netcoreapp1.1\MonitorOobj.dll
+C:\Users\Alexsander Camargo\documents\visual studio 2017\Projects\MonitorOobj\MonitorOobj\bin\Debug\netcoreapp1.1\MonitorOobj.pdb
+C:\Users\Alexsander Camargo\documents\visual studio 2017\Projects\MonitorOobj\MonitorOobj\obj\Debug\netcoreapp1.1\MonitorOobj.AssemblyInfo.cs
+C:\Users\Alexsander Camargo\documents\visual studio 2017\Projects\MonitorOobj\MonitorOobj\obj\Debug\netcoreapp1.1\MonitorOobj.dll
+C:\Users\Alexsander Camargo\documents\visual studio 2017\Projects\MonitorOobj\MonitorOobj\obj\Debug\netcoreapp1.1\MonitorOobj.pdb
+C:\Users\Alexsander Camargo\documents\visual studio 2017\Projects\MonitorOobj\MonitorOobj\obj\Debug\netcoreapp1.1\MonitorOobj.csprojResolveAssemblyReference.cache
