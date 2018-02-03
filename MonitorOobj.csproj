@@ -8,10 +8,7 @@
     <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Content Include="wwwroot\css\Monitoramento.css" />
-    <Content Include="wwwroot\js\Monitoramento.js" />
-  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
