@@ -203,3 +203,71 @@ function drawMouseSpeedDemo() {
     // We could use setInterval instead, but I prefer to do it this way
     setTimeout(mdraw, mrefreshinterval);
 }
+
+
+function alterarGraficoMemoria(value) {
+    $('input.Memoria').val(value).trigger('change');
+}
+
+function alterarGraficoCritico(value) {
+    $('input.Critico').val(value).trigger('change');
+}   
+
+function alterarGraficoAlerta(value) {
+    $('input.Alerta').val(value).trigger('change');
+}   
+
+function alterarGraficoNormal(value) {
+    $('input.Normal').val(value).trigger('change');
+} 
+
+function alterarPaineis() {
+
+    $.ajax({
+        url: "/monitoramento/qtdRecebe",
+        success: function (result) {
+            $("div.recebe").html("<h3>" + result + "</h3>");
+        }
+    });
+
+    $.ajax({
+        url: "/monitoramento/qtdResposta",
+        success: function (result) {
+            $("div.resposta").html("<h3>" + result + "</h3>");
+        }
+    });
+
+    $.ajax({
+        url: "/monitoramento/qtdTotal",
+        success: function (result) {
+            $("div.total").html("<h3>" + result + "</h3>");
+        }
+    });
+
+    $.ajax({
+        url: "/monitoramento/percentMemoria",
+        success: function (result) {
+            alterarGraficoMemoria(result);
+        }
+    });
+
+    $.ajax({
+        url: "/monitoramento/percentTipos",
+        success: function (result) {
+            alterarGraficoCritico(result[0]);
+            alterarGraficoAlerta(result[1]);
+            alterarGraficoNormal(result[2]);
+        }
+    });
+
+
+    console.log("Paineis Atualizados.");
+}
+
+$(document).ready(function () {
+
+    $('#monitoramentotab').addClass('active');
+    alterarPaineis();
+    window.setInterval('alterarPaineis()', 10000);
+
+});

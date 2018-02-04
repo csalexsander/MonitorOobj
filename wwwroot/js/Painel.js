@@ -28,6 +28,7 @@ $.fn.dataTable.ext.order['dom-checkbox'] = function (settings, col) {
 
 $(document).ready(function () {
 
+    $('#filastab').addClass('active');
     AplicarDataTableResposta();
     AplicarDataTableRecebe();
     var intervalResposta;

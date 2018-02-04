@@ -7,41 +7,6 @@
     <div class="col-md-6">
         <div class="panel panel-primary">
             <div class=panel-heading>
-                <h3 class=panel-title>Totais de Mensagens</h3>
-            </div>
-            <div class=panel-body>
-                <label>CNPJ com mais de 2000 mensagens: </label> @ViewBag.cnpjA <br />
-                <label>CNPJ com quantidade entre 1000 a 2000 Mensagens Enfileiradas: </label> @ViewBag.cnpjB <br />
-                <label>CNPJ com menos de 1000 mensagens: </label> @ViewBag.cnpjC <br />
-                <label>Total de Mensagens Enfileiradas: </label> @ViewBag.MensagensTot
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="panel panel-primary">
-            <div class=panel-heading>
-                <h3 class=panel-title>Consumo de Memoria</h3>
-            </div>
-            <div class="panel-body">
-                <div class="form-group form-inline col-md-12">
-                    <label>Consumo de Memoria Atual</label>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="@ViewBag.memoria.MemoriaAtual" aria-valuemin="0" aria-valuemax="@ViewBag.memoria.MemoriaMaxima" style="width: @ViewBag.memoria.MemoriaAtualPercent">
-                            @ViewBag.memoria.MemoriaAtualString - @ViewBag.memoria.MemoriaAtualPercent
-                        </div>
-                    </div>
-                    <label>
-                        Pico: @(ViewBag.memoria.MemoriaPicoString)B <br />
-                        Max: @ViewBag.memoria.MemoriaMaximaString
-                    </label>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-6">
-        <div class="panel panel-primary">
-            <div class=panel-heading>
                 <h3 class=panel-title>Mensagens: Recebe</h3>
             </div>
             <div class=panel-body>
@@ -68,13 +33,6 @@
             </div>
         </div>
     </div>
-
-    <br />
-    <br />
-    <br />
-    <br />
-
-
     @section scripts{
         <script src="~/js/Painel.js"></script>
     }
