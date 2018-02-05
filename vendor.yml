@@ -236,6 +236,12 @@
 # .osx
 - ^.osx$
 
+# CSS
+- ^.css$
+
+# JS
+- ^.js$
+
 ## Obj-C ##
 
 # Xcode
