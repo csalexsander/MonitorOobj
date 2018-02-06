@@ -268,6 +268,22 @@ $(document).ready(function () {
 
     $('#monitoramentotab').addClass('active');
     alterarPaineis();
-    window.setInterval('alterarPaineis()', 10000);
+	alterarping();
+    var paineis = window.setInterval('alterarPaineis()', 10000);
+	var ping = window.setInterval('alterarping()', 1000);
 
 });
+
+function alterarping(){
+	var data = window.performance.timing;
+	var tempo = data.fetchStart;
+	$.ajax({
+		url: "/monitoramento/qtdRecebe",
+		success: function(result){
+			var response = data.responseEnd;
+			tempo = response - tempo;
+			$("div.ping").html("<h3>" + tempo + " ms" + "</h3>");
+			console.log("Ping Atualizado");
+		}
+	});
+}
