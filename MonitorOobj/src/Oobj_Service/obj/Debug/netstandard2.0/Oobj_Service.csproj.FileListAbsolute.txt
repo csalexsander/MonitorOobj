@@ -1,0 +1,12 @@
+C:\Dev\MonitorOobj\MonitorOobj\src\Oobj_Service\bin\Debug\netstandard2.0\Oobj_Service.deps.json
+C:\Dev\MonitorOobj\MonitorOobj\src\Oobj_Service\bin\Debug\netstandard2.0\Oobj_Service.dll
+C:\Dev\MonitorOobj\MonitorOobj\src\Oobj_Service\obj\Debug\netstandard2.0\Oobj_Service.AssemblyInfoInputs.cache
+C:\Dev\MonitorOobj\MonitorOobj\src\Oobj_Service\obj\Debug\netstandard2.0\Oobj_Service.AssemblyInfo.cs
+C:\Dev\MonitorOobj\MonitorOobj\src\Oobj_Service\obj\Debug\netstandard2.0\Oobj_Service.csprojAssemblyReference.cache
+C:\Dev\MonitorOobj\MonitorOobj\src\Oobj_Service\bin\Debug\netstandard2.0\Oobj_Service.pdb
+C:\Dev\MonitorOobj\MonitorOobj\src\Oobj_Service\bin\Debug\netstandard2.0\Oobj_Infra.dll
+C:\Dev\MonitorOobj\MonitorOobj\src\Oobj_Service\bin\Debug\netstandard2.0\Oobj_Infra.pdb
+C:\Dev\MonitorOobj\MonitorOobj\src\Oobj_Service\obj\Debug\netstandard2.0\RefitStubs.g.cs
+C:\Dev\MonitorOobj\MonitorOobj\src\Oobj_Service\obj\Debug\netstandard2.0\Oobj_Service.csproj.CopyComplete
+C:\Dev\MonitorOobj\MonitorOobj\src\Oobj_Service\obj\Debug\netstandard2.0\Oobj_Service.dll
+C:\Dev\MonitorOobj\MonitorOobj\src\Oobj_Service\obj\Debug\netstandard2.0\Oobj_Service.pdb

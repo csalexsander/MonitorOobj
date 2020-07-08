@@ -1,0 +1,8 @@
+C:\Dev\MonitorOobj\MonitorOobj\Oobj_Aplication\bin\Debug\netstandard2.0\Oobj_Aplication.deps.json
+C:\Dev\MonitorOobj\MonitorOobj\Oobj_Aplication\bin\Debug\netstandard2.0\Oobj_Aplication.dll
+C:\Dev\MonitorOobj\MonitorOobj\Oobj_Aplication\obj\Debug\netstandard2.0\Oobj_Aplication.AssemblyInfoInputs.cache
+C:\Dev\MonitorOobj\MonitorOobj\Oobj_Aplication\obj\Debug\netstandard2.0\Oobj_Aplication.AssemblyInfo.cs
+C:\Dev\MonitorOobj\MonitorOobj\Oobj_Aplication\obj\Debug\netstandard2.0\Oobj_Aplication.csprojAssemblyReference.cache
+C:\Dev\MonitorOobj\MonitorOobj\Oobj_Aplication\bin\Debug\netstandard2.0\Oobj_Aplication.pdb
+C:\Dev\MonitorOobj\MonitorOobj\Oobj_Aplication\obj\Debug\netstandard2.0\Oobj_Aplication.dll
+C:\Dev\MonitorOobj\MonitorOobj\Oobj_Aplication\obj\Debug\netstandard2.0\Oobj_Aplication.pdb

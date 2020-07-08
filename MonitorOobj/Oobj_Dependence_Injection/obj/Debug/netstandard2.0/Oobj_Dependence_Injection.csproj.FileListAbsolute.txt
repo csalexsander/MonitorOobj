@@ -1,0 +1,14 @@
+C:\Dev\MonitorOobj\MonitorOobj\Oobj_Dependence_Injection\bin\Debug\netstandard2.0\Oobj_Dependence_Injection.deps.json
+C:\Dev\MonitorOobj\MonitorOobj\Oobj_Dependence_Injection\bin\Debug\netstandard2.0\Oobj_Dependence_Injection.dll
+C:\Dev\MonitorOobj\MonitorOobj\Oobj_Dependence_Injection\obj\Debug\netstandard2.0\Oobj_Dependence_Injection.csprojAssemblyReference.cache
+C:\Dev\MonitorOobj\MonitorOobj\Oobj_Dependence_Injection\obj\Debug\netstandard2.0\Oobj_Dependence_Injection.AssemblyInfoInputs.cache
+C:\Dev\MonitorOobj\MonitorOobj\Oobj_Dependence_Injection\obj\Debug\netstandard2.0\Oobj_Dependence_Injection.AssemblyInfo.cs
+C:\Dev\MonitorOobj\MonitorOobj\Oobj_Dependence_Injection\bin\Debug\netstandard2.0\Oobj_Infra.dll
+C:\Dev\MonitorOobj\MonitorOobj\Oobj_Dependence_Injection\bin\Debug\netstandard2.0\Oobj_Service.dll
+C:\Dev\MonitorOobj\MonitorOobj\Oobj_Dependence_Injection\obj\Debug\netstandard2.0\RefitStubs.g.cs
+C:\Dev\MonitorOobj\MonitorOobj\Oobj_Dependence_Injection\bin\Debug\netstandard2.0\Oobj_Dependence_Injection.pdb
+C:\Dev\MonitorOobj\MonitorOobj\Oobj_Dependence_Injection\bin\Debug\netstandard2.0\Oobj_Service.pdb
+C:\Dev\MonitorOobj\MonitorOobj\Oobj_Dependence_Injection\bin\Debug\netstandard2.0\Oobj_Infra.pdb
+C:\Dev\MonitorOobj\MonitorOobj\Oobj_Dependence_Injection\obj\Debug\netstandard2.0\Oobj_Dependence_Injection.csproj.CopyComplete
+C:\Dev\MonitorOobj\MonitorOobj\Oobj_Dependence_Injection\obj\Debug\netstandard2.0\Oobj_Dependence_Injection.dll
+C:\Dev\MonitorOobj\MonitorOobj\Oobj_Dependence_Injection\obj\Debug\netstandard2.0\Oobj_Dependence_Injection.pdb
