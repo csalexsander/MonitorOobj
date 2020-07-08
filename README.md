@@ -6,10 +6,15 @@ Atualmente em refatoração para o uso de novas tecnologias.
 
 Tecnologias Utilizadas:
   > .Net Core 3.0
+  
   > Fluent Validation
+  
   > Auto Mapper
+  
   > Dapper
+  
   > MediatR
+  
   > Injeção de Dependencias
   
  Futuramente será implementado um front end em React JS e um WorkerService para obter assincronamente a cada 5 minutos via requisição os dados para alimentar a base local.  
