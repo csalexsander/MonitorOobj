@@ -1,3 +1,5 @@
+AVISO LEGAL
+
 Projeto criado para atender uma necessidade interna de quando eu era suporte na Oobj Tecnologia da Informação.
 
 O Uso desse projeto é voltado apenas para estudo de tecnologia, sem vinculo nenhum com a Oobj.
@@ -7,6 +9,7 @@ Este projeto não possui nenhuma intenção comercial e o mesmo não esta autori
 Se você é algum responsavel da empresa e deseja que o projeto seja removido do modo publico, por favor me contate no e-mail csalexsander@gmail.com
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DISCLAIMER
 
 Project created to meet an internal need when I was support at Oobj Tecnologia da Informação.
 
